@@ -22,8 +22,8 @@ const md = new MarkdownIt();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'static')));
-app.use('/templates', express.static(path.join(__dirname, 'templates')));
+app.use('/Mysour/static', express.static(path.join(__dirname, 'static')));
+app.use('/Mysour/templates', express.static(path.join(__dirname, 'templates')));
 
 // Format code blocks function
 function formatCodeBlocks(text) {
@@ -55,7 +55,7 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'templates', 'index.html'));
 });
 
-app.post('/chat', async (req, res) => {
+app.post('/Mysour/chat', async (req, res) => {
     const { message, image } = req.body;
     
     try {
