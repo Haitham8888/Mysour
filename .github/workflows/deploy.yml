@@ -21,8 +21,12 @@ jobs:
         
       - name: Build
         run: |
-          mkdir -p dist
-          cp -r static templates .env server.js package.json index.html dist/
+          mkdir -p dist/static
+          cp -r static/* dist/static/
+          cp -r templates dist/
+          cp .env server.js package.json index.html dist/
+          # Create a base URL configuration file
+          echo '{"baseUrl": "/Mysour"}' > dist/config.json
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           
@@ -30,4 +34,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
-          branch: gh-pages 
+          branch: gh-pages
+          clean: true 
