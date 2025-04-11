@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       
@@ -20,14 +20,14 @@ jobs:
         run: npm install
         
       - name: Build
-        run: npm run build
+        run: |
+          mkdir -p dist
+          cp -r static templates .env server.js package.json index.html dist/
         env:
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
-          destination_dir: ./ 
+          folder: dist
+          branch: gh-pages 
