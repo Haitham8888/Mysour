@@ -1,0 +1,11 @@
+flask==3.0.2
+requests==2.31.0
+ollama
+deepseek
+langchain
+langchain-openai
+langchain_community
+langchain_core
+python-dotenv==1.0.1
+streamlit
+openai==1.12.0
