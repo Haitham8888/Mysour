@@ -11,36 +11,30 @@ import io
 # Load environment variables
 load_dotenv()
 
-# Validate required environment variables
-required_env_vars = ["OPENROUTER_API_KEY", "SITE_URL", "SITE_NAME"]
-missing_vars = [var for var in required_env_vars if not os.getenv(var)]
-if missing_vars:
-    print(f"Error: Missing required environment variables: {', '.join(missing_vars)}")
-    print("Please check your .env file")
+# Validate API key availability
+api_key = os.getenv("OPENROUTER_API_KEY")
+if not api_key:
+    print("ERROR: OPENROUTER_API_KEY is missing or empty")
+else:
+    print(f"API key loaded: {api_key[:8]}...")
 
 app = Flask(__name__)
 
 # Initialize OpenAI client with OpenRouter configuration
 client = OpenAI(
     base_url="https://openrouter.ai/api/v1",
-    api_key=os.getenv("OPENROUTER_API_KEY"),
+    api_key=api_key,
 )
 
 def format_code_blocks(text):
-    if not text:
-        return ""
-    try:
-        # Convert markdown code blocks to HTML
-        html = markdown.markdown(text, extensions=['fenced_code', 'codehilite'])
-        
-        # Add custom styling for code blocks
-        html = html.replace('<pre>', '<pre class="code-block">')
-        html = html.replace('<code>', '<code class="code-content">')
-        
-        return html
-    except Exception as e:
-        print(f"Error formatting code blocks: {str(e)}")
-        return text  # Return original text if formatting fails
+    # Convert markdown code blocks to HTML
+    html = markdown.markdown(text, extensions=['fenced_code', 'codehilite'])
+    
+    # Add custom styling for code blocks
+    html = html.replace('<pre>', '<pre class="code-block">')
+    html = html.replace('<code>', '<code class="code-content">')
+    
+    return html
 
 def process_image(image_data):
     try:
@@ -100,10 +94,14 @@ def chat():
                 "content": user_input
             })
 
+        # Print debug information
+        print(f"Making API request to model: qwen/qwen2.5-vl-3b-instruct:free")
+        print(f"Using API key starting with: {api_key[:8]}...")
+        
         completion = client.chat.completions.create(
             extra_headers={
-                "HTTP-Referer": os.getenv("SITE_URL"),
-                "X-Title": os.getenv("SITE_NAME"),
+                "HTTP-Referer": os.getenv("SITE_URL", "http://localhost:5000"),
+                "X-Title": os.getenv("SITE_NAME", "Mysour"),
             },
             model="qwen/qwen2.5-vl-3b-instruct:free",
             messages=messages
@@ -113,7 +111,17 @@ def chat():
         formatted_reply = format_code_blocks(reply)
         return jsonify({"reply": formatted_reply})
     except Exception as e:
-        return jsonify({"reply": f"Error: {str(e)}"}), 500
+        error_msg = str(e)
+        print(f"Error in chat endpoint: {error_msg}")
+        
+        # Add debugging for authentication errors
+        if "401" in error_msg and "auth" in error_msg.lower():
+            print("Authentication error detected. Please check:")
+            print("1. API key format (should start with 'sk-or-')")
+            print("2. API key validity in OpenRouter dashboard")
+            print("3. Correct API URL (https://openrouter.ai/api/v1)")
+        
+        return jsonify({"reply": f"Error: {error_msg}"}), 500
 
 @app.route('/favicon.ico')
 def favicon():
