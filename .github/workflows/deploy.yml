@@ -29,4 +29,5 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          commit_message: "Deploy: ${{ github.event.head_commit.message }}" 
+          commit_message: "Deploy: ${{ github.event.head_commit.message }}"
+          destination_dir: ./ 
