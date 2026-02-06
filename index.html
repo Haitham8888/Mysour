@@ -1,153 +1,269 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>ميسور للاتصالات وتقنية المعلومات</title>
+  <title>ميسور | أسهل، أوفر، ميسور معك</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="assets/img/Yusr.png" type="image/png">
 </head>
+
 <body>
+
+  <!-- Header -->
   <header class="site-header">
     <div class="container header-grid">
       <div class="brand">
-  <img src="assets/img/Yusr.png" alt="شعار ميسور" class="logo">
-        <div class="brand-text">
-          <h1>ميسور للاتصالات وتقنية المعلومات</h1>
-          <p class="tagline">حلول رقمية ذكية للشركات والمؤسسات</p>
-        </div>
+        <a href="/" class="brand-link">
+          <img src="assets/img/Yusr.png" alt="شعار ميسور" class="logo">
+          <div class="brand-text">
+            <h1>ميسور</h1>
+          </div>
+        </a>
       </div>
+
       <nav class="nav">
-        <a href="#services">خدماتنا</a>
-        <a href="#about">من نحن</a>
-        <a href="#contact" class="btn-primary">اتصل بنا</a>
+        <ul class="nav-list">
+          <li><a href="/" class="active">الرئيسية</a></li>
+          <li><a href="#services">الخدمات</a></li>
+          <li><a href="#projects">تطبيق ميسور</a></li>
+          <li><a href="#contact">اتصل بنا</a></li>
+        </ul>
       </nav>
+
+      <div class="header-actions">
+        <button class="search-btn" title="بحث"><i class="fas fa-search"></i></button>
+        <a href="#contact" class="btn-nav-primary">
+          <i class="fas fa-cloud-download-alt"></i>
+          <span>حمل التطبيق</span>
+        </a>
+      </div>
+
+      <div class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </div>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section class="hero">
       <div class="container hero-grid">
-        <div class="hero-text">
-          <h2>نقود تحولك الرقمي بخبرة موثوقة</h2>
-          <p>نقدم حلول اتصالات متكاملة، بنية تحتية للشبكات، تطوير برمجيات، واستشارات تقنية لتسريع نمو أعمالك.</p>
-          <div class="hero-cta">
-            <a href="#contact" class="btn-primary">اطلب عرضاً</a>
-            <a href="#services" class="btn-outline">عرض الخدمات</a>
-          </div>
+        <div class="hero-image">
+          <!-- Using two phones as placeholder representation for app -->
+          <img src="assets/img/image.png" alt="ميسور دايماً معك" class="hero-mockup">
         </div>
-        <div class="hero-image" aria-hidden="true">
-          <img src="assets/hero-illustration.svg" alt="صورة توضيحية للخدمات التقنية">
+        <div class="hero-text">
+          <h1 class="hero-title">أسهل، أوفر،<br>ميسور يمك</h1>
+          <p class="hero-description">تطبيق ميسور يوفر لك خدمات الاتصالات وتجارة النقاط بكل سهولة وأمان. حمل التطبيق
+            الآن وسهلها على نفسك.</p>
+          <div class="hero-cta">
+            <a href="#" class="app-badge"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"></a>
+            <a href="#" class="app-badge"><img
+                src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+                alt="App Store"></a>
+          </div>
         </div>
       </div>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
       <div class="container">
-        <h3>خدماتنا</h3>
-        <div class="cards">
-          <article class="card">
-            <h4>حلول الاتصالات</h4>
-            <p>تصميم وتنفيذ شبكات اتصالات مرنة وآمنة للشركات الصغيرة والكبيرة.</p>
-          </article>
-          <article class="card">
-            <h4>تطوير البرمجيات</h4>
-            <p>تطوير تطبيقات ويب وموبايل مخصصة وفق أعلى معايير الجودة.</p>
-          </article>
-          <article class="card">
-            <h4>البنية التحتية والسحابة</h4>
-            <p>هندسة سحابية، إعداد خوادم، وخدمات النسخ الاحتياطي والاسترداد.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="projects">
-      <div class="container">
-        <h3>مشاريع مميزة</h3>
-        <div class="project-card">
-          <div class="project-inner">
-            <div class="project-details">
-              <h4>تطبيق يُسر</h4>
-              <p class="lead">تطبيق يحول دفاتر الديون والعربون والفواتير إلى نظام رقمي عبر نقاط البيع.</p>
-              <ul>
-                <li>سجلات رقمية سهلة وسريعة ومنظمة.</li>
-                <li>متابعة دقيقة للديون والمدفوعات.</li>
-                <li>دفع آمن وتحويل فوري عبر NFC.</li>
-                <li>عمليات أسرع وتحسين تجربة العملاء.</li>
-              </ul>
-              <p class="muted">متوفر للاندرويد و IOS، ويمكن دمجه مع أنظمة نقاط البيع الحالية.</p>
-            </div>
-            <div class="project-media">
-              <div class="screenshot-frame" aria-hidden="true">
-                <img src="assets/img/YusrApp.png" alt="لقطة شاشة لتطبيق يُسر" class="project-screenshot">
+        <h2 class="section-title">خدمات ميسور التقنية</h2>
+        <div class="services-container">
+          <div class="service-grid">
+            <a href="#pos" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-cash-register fa-4x" style="color: var(--primary);"></i>
               </div>
-              <div class="screenshot-caption">معاينة للتطبيق</div>
-            </div>
+              <span>نقاط البيع (POS)</span>
+            </a>
+            <a href="#debts" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-file-invoice-dollar fa-4x" style="color: var(--primary);"></i>
+              </div>
+              <span>إدارة الديون</span>
+            </a>
+            <a href="#stores" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-store fa-4x" style="color: var(--primary);"></i>
+              </div>
+              <span>إدارة المتاجر</span>
+            </a>
+            <a href="#" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-network-wired fa-4x" style="color: var(--primary);"></i>
+              </div>
+              <span>حلول الاتصالات</span>
+            </a>
+            <a href="#" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-mobile-alt fa-4x" style="color: var(--primary);"></i>
+              </div>
+              <span>تطبيقات الموبايل</span>
+            </a>
+            <a href="#" class="service-item">
+              <div class="service-icon-box">
+                <i class="fas fa-cloud fa-4x" style="color: var(--primary);"></i>
+              </div>
+              <span>البنية السحابية</span>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="about" class="about">
-      <div class="container about-grid">
-        <div>
-          <h3>من نحن</h3>
-          <p>ميسور شركة متخصصة في تقديم حلول الاتصالات وتقنية المعلومات، نسعى لتقديم خدمات عالية الجودة مع دعم فني مستمر. فريقنا يتكون من مهندسين واستشاريين ذوي خبرة في المشاريع المحلية والإقليمية.</p>
-          <ul>
-            <li>خبرة في الشبكات والاتصالات</li>
-            <li>تطوير برمجيات حسب الطلب</li>
-            <li>خدمات إدارة البنية التحتية</li>
+    <!-- Detailed Service: POS -->
+    <section id="pos" class="service-detail-section">
+      <div class="container detail-grid">
+        <div class="detail-image animate-fadeInLeft">
+          <img src="assets/img/pos.png" alt="POS System">
+        </div>
+        <div class="detail-content">
+          <h2 class="detail-title">نقاط البيع (POS)</h2>
+          <p class="detail-lead">نظام متكامل لإدارة مبيعاتك اليومية:</p>
+          <ul class="detail-list">
+            <li><i class="fas fa-check-circle"></i> واجهة سريعة وسهلة الاستخدام للموظفين</li>
+            <li><i class="fas fa-check-circle"></i> دعم لجميع أنواع الطابعات وماسحات الباركود</li>
+            <li><i class="fas fa-check-circle"></i> تقارير مبيعات فورية وتحليلات ذكية</li>
+            <li><i class="fas fa-check-circle"></i> يعمل دون الحاجة لاتصال دائم بالإنترنت</li>
           </ul>
         </div>
-        <div class="stats">
-          <div class="stat">
-            <strong>10+</strong>
-            <span>سنوات خبرة</span>
-          </div>
-          <div class="stat">
-            <strong>200+</strong>
-            <span>عميل راضٍ</span>
-          </div>
-          <div class="stat">
-            <strong>50+</strong>
-            <span>مشروع مُنجز</span>
+      </div>
+    </section>
+
+    <!-- Detailed Service: Debt Mgmt -->
+    <section id="debts" class="service-detail-section alt-bg">
+      <div class="container detail-grid reverse">
+        <div class="detail-image animate-fadeInRight">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=1000&auto=format&fit=crop"
+            alt="Debt Management">
+        </div>
+        <div class="detail-content">
+          <h2 class="detail-title">إدارة الديون الرقمية</h2>
+          <p class="detail-lead">وداعاً للدفاتر التقليدية والأخطاء الحسابية:</p>
+          <ul class="detail-list">
+            <li><i class="fas fa-check-circle"></i> أرشفة رقمية آمنة لكل ديون العملاء والموردين</li>
+            <li><i class="fas fa-check-circle"></i> تنبيهات آلية بمواعيد السداد عبر الرسائل</li>
+            <li><i class="fas fa-check-circle"></i> مزامنة فورية للبيانات بين جميع أجهزتك</li>
+            <li><i class="fas fa-check-circle"></i> كشوفات حساب تفصيلية بضغطة زر</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Service: Store Mgmt -->
+    <section id="stores" class="service-detail-section">
+      <div class="container detail-grid">
+        <div class="detail-image animate-fadeInLeft">
+          <img src="https://images.unsplash.com/photo-1534452203293-494d7ddbf7e0?q=80&w=1000&auto=format&fit=crop"
+            alt="Store Management">
+        </div>
+        <div class="detail-content">
+          <h2 class="detail-title">إدارة المتاجر والمخازن</h2>
+          <p class="detail-lead">تحكم كامل في تجارتك من مكان واحد:</p>
+          <ul class="detail-list">
+            <li><i class="fas fa-check-circle"></i> جرد مخزني آلي وتنبيهات عند نقص الكميات</li>
+            <li><i class="fas fa-check-circle"></i> إدارة صلاحية المنتجات وتواريخ الانتهاء</li>
+            <li><i class="fas fa-check-circle"></i> تتبع حركة الأصناف الأكثر مبيعاً</li>
+            <li><i class="fas fa-check-circle"></i> دعم تعدد الفروع والمخازن في حساب واحد</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- App Features -->
+    <section id="projects" class="app-feature">
+      <div class="container feature-grid">
+        <div class="feature-image">
+          <img src="assets/img/YusrApp.png" alt="تطبيق ميسور" class="app-screenshot">
+        </div>
+        <div class="feature-content">
+          <h2>تطبيق ميسور يجمعلك كلشي!</h2>
+          <p>كل ما تحتاجه لإدارة أعمالك وتجارتك الرقمية في مكان واحد وبضغطة زر. سجل الآن وابدأ رحلة النجاح.</p>
+          <ul class="feature-list">
+            <li><i class="fas fa-check-circle"></i> واجهة مستخدم سهلة وبسيطة</li>
+            <li><i class="fas fa-check-circle"></i> دعم فني متواصل على مدار الساعة</li>
+            <li><i class="fas fa-check-circle"></i> أمان عالٍ لبياناتك وعملياتك</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Global App Download Banner -->
+    <section class="app-download-banner">
+      <div class="container banner-flex">
+        <div class="banner-content">
+          <h2 class="banner-title">تطبيقنا يجمعلك كلشي بمكان واحد!</h2>
+          <p class="banner-desc">تطبيق ميسور يتيح لك إدارة مبيعاتك، تتبع ديونك، وتنظيم مخازنك بكل سهولة وأمان وفى أي
+            وقت. حمل التطبيق الآن وخلي تجارتك تمشي بيسر وسهولة.</p>
+          <div class="banner-apps">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg"
+              alt="App Store">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+              alt="Google Play">
           </div>
         </div>
       </div>
     </section>
 
+
+    <!-- Contact Section -->
     <section id="contact" class="contact">
       <div class="container contact-grid">
         <div class="contact-info">
-          <h3>اتصل بنا</h3>
-          <p>سواء للاستفسار أو طلب عرض سعر، نحن هنا لمساعدتك.</p>
-          <p><strong>البريد الإلكتروني:</strong> yusr.why@gmail.com</p>
-          <p><strong>العنوان:</strong> الرياض، المملكة العربية السعودية</p>
+          <h2 class="section-title">إتصل بنا</h2>
+          <p>نحن متواجدون للرد على استفساراتكم في أي وقت.</p>
+          <div class="info-items" style="margin-top: 30px;">
+            <p><i class="fas fa-envelope" style="color: var(--primary); margin-left: 10px;"></i> maysour.info@gmail.com
+            </p>
+            <p style="margin-top: 15px;"><i class="fas fa-map-marker-alt"
+                style="color: var(--primary); margin-left: 10px;"></i> المملكة العربية السعودية - الرياض</p>
+          </div>
         </div>
-        <form class="contact-form" novalidate>
-          <label for="name">الاسم</label>
-          <input id="name" name="name" type="text" required>
-
-          <label for="email">البريد الإلكتروني</label>
-          <input id="email" name="email" type="email" required>
-
-          <label for="message">الرسالة</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-          <button type="submit" class="btn-primary">أرسل</button>
-          <p class="form-status" aria-live="polite"></p>
+        <form class="contact-form">
+          <div class="form-group">
+            <label>الاسم</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="form-group">
+            <label>البريد الإلكتروني</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label>الرسالة</label>
+            <textarea name="message" rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn-primary full-width">أرسل الآن</button>
+          <p class="form-status"></p>
         </form>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> ميسور للاتصالات وتقنية المعلومات — جميع الحقوق محفوظة.</p>
+    <div class="container footer-bottom">
+      <p>&copy; <span id="year"></span> ميسور. جميع الحقوق محفوظة.</p>
+      <div class="social-links" style="display: flex; gap: 15px;">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
     </div>
   </footer>
 
   <script src="js/script.js" defer></script>
 </body>
+
 </html>
