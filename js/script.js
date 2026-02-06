@@ -4,15 +4,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const yearElement = document.getElementById('year');
   if (yearElement) yearElement.textContent = new Date().getFullYear();
 
-  // Smooth scroll for internal links
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+  // Handle Active Link & Smooth Scroll
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  navLinks.forEach(function (a) {
     a.addEventListener('click', function (e) {
+      // Remove active class from all links
+      navLinks.forEach(link => link.classList.remove('active'));
+      // Add active class to clicked link
+      this.classList.add('active');
+
       const href = this.getAttribute('href');
-      if (href === '#') return;
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      // Smooth scroll if it's an internal link
+      if (href.startsWith('#') && href !== '#') {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+      // Close mobile menu if open
+      if (nav.classList.contains('active')) {
+        nav.classList.remove('active');
+        const icon = menuToggle.querySelector('i');
+        if (icon) {
+          icon.classList.add('fa-bars');
+          icon.classList.remove('fa-times');
+        }
       }
     });
   });
